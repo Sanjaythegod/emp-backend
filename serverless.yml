@@ -14,11 +14,20 @@ functions:
       - httpApi:
           path: /
           method: get
+          cors: true
   healthCheck:
     handler: index.healthCheck
     events:
       - httpApi:
           path: healthCheck
           method: get
+          cors: true
+  testQuery:
+    handler: index.testQuery
+    events:
+      - httpApi:
+          path: testQuery
+          method: get
+          cors: true
 plugins:
   - serverless-offline
