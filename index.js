@@ -20,12 +20,9 @@ module.exports.handler = async (event) => {
 
 module.exports.testQuery = async(event) => {
   try{
-
-
     const {
       Users,
-      Products,
-      Orders,
+      sequelize
     } = await connectToDatabase();
     
     const insertUser = `INSERT INTO Users (id, email, password_hash, line_1, line_2, city, state, country) VALUES ('1', 'email@gmail.com', '1', 'Address', 'Address2', 'San diego', 'Ca', 'usa');`;
